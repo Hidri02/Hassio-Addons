@@ -14,7 +14,7 @@ if ! bashio::config.has_value 'external_device'; then
   bashio::log.info "Then restart the addon for the first sync."
 
 else
-  bashio::log.info "Version 0.01"
+  bashio::log.info "Version 1.7.1"
   bashio::log.info "Starting sync..."
   EXTERNAL_DEVICE=$(bashio::config 'external_device')
 
