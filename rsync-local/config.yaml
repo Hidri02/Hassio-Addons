@@ -1,5 +1,5 @@
 name: rsync local
-version: 1.7.2
+version: 1.7.3
 slug: rsync-local
 description: Sync folders to a external usb drive with rsync.
 url: https://github.com/Hidri02/Hassio-Addons/tree/main/rsync-local
