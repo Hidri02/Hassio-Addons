@@ -5,6 +5,8 @@ set -e
 FOLDERS=$(bashio::addon.config | jq -r ".folders")
 EXTERNAL_FOLDER=$(bashio::config 'external_folder')
 
+bashio::log.info "Version 1.7.0"
+
 if ! bashio::config.has_value 'external_device'; then
   bashio::log.info "Detected devices..."
   ls -h1 /dev/sd*
@@ -14,7 +16,6 @@ if ! bashio::config.has_value 'external_device'; then
   bashio::log.info "Then restart the addon for the first sync."
 
 else
-  bashio::log.info "Version 1.7.1"
   bashio::log.info "Starting sync..."
   EXTERNAL_DEVICE=$(bashio::config 'external_device')
 
