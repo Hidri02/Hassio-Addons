@@ -5,7 +5,7 @@ set -e
 FOLDERS=$(bashio::addon.config | jq -r ".folders")
 EXTERNAL_FOLDER=$(bashio::config 'external_folder')
 
-bashio::log.info "Version 1.7.0"
+bashio::log.info "Version 1.7.1"
 
 if ! bashio::config.has_value 'external_device'; then
   bashio::log.info "Detected devices..."
