@@ -5,7 +5,7 @@ set -e
 FOLDERS=$(bashio::addon.config | jq -r ".folders")
 EXTERNAL_FOLDER=$(bashio::config 'external_folder')
 
-bashio::log.info "Version 1.7.2"
+bashio::log.info "Version 1.7.3"
 
 if ! bashio::config.has_value 'external_device'; then
   bashio::log.info "Detected devices..."
@@ -25,7 +25,7 @@ else
     for (( i=0; i<folder_count; i=i+1 )); do
       source=$(echo "$FOLDERS" | jq -r ".[$i].source")
       options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"--archive --recursive --compress --delete --prune-empty-dirs\"")
-      bashio::log.info "Sync ${local} -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
+      bashio::log.info "Sync... -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
       set -x
       # shellcheck disable=SC2086
       rsync ${options} \
@@ -44,7 +44,7 @@ else
   
       local=$(echo "$FOLDERS" | jq -r ".[$i].source")
       options=$(echo "$FOLDERS" | jq -r ".[$i].options // \"--archive --recursive --compress --delete --prune-empty-dirs\"")
-      bashio::log.info "Sync ${local} -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
+      bashio::log.info "Sync... -> ${EXTERNAL_DEVICE}/${EXTERNAL_FOLDER} with options \"${options}\""
       set -x
       # shellcheck disable=SC2086
       rsync ${options} \
