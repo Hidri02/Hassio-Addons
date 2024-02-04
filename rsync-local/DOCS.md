@@ -40,4 +40,7 @@ Make sure to adjust it when for example running Home Assistant from a external d
 
 If no device is specified all available devices will be displayed in the log. No sync takes place without device.
 
-Available options: `/dev/sd[a-e][1-5]`
+Available options: 
+- `/dev/sd[a-e][1-5]`
+- `local`
+Use local if you don't want to use an external_drive but just want to sync to your running Home Assistant instance but to a different folder as mounting your home assistant instance wouldn't work due to missing permissions.
