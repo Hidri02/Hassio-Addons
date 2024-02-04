@@ -18,7 +18,7 @@ if ! bashio::config.has_value 'external_device'; then
 else
   bashio::log.info "Starting sync..."
   EXTERNAL_DEVICE=$(bashio::config 'external_device')
-
+  
   if  bashio::var.equals "${EXTERNAL_DEVICE}" "local"; then
   
     folder_count=$(echo "$FOLDERS" | jq -r '. | length')
@@ -32,7 +32,7 @@ else
       "$source" "${EXTERNAL_FOLDER}"
       set +x
     done
-  
+    
     bashio::log.info "Synced all folders"
   else
     bashio::log.info "Mounting device ${EXTERNAL_DEVICE}"
@@ -54,4 +54,5 @@ else
   
     umount /external
     bashio::log.info "Synced all folders"
+  fi
 fi
