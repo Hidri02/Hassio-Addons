@@ -17,7 +17,7 @@ else
   bashio::log.info "Starting sync..."
   EXTERNAL_DEVICE=$(bashio::config 'external_device')
 
-  if [[ "$EXTERNAL_DEVICE" == "local" ]]; then  
+  if [ "$EXTERNAL_DEVICE" == "local" ]; then  
   
     folder_count=$(echo "$FOLDERS" | jq -r '. | length')
     for (( i=0; i<folder_count; i=i+1 )); do
